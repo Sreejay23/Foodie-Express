@@ -24,26 +24,26 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-9 h-9 bg-red-600 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#e23744' }}>
-              <span className="text-white text-lg font-bold">Z</span>
+            <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#FF5C00' }}>
+              <span className="text-white text-lg font-bold">F</span>
             </div>
             <div className="flex items-center space-x-1">
-              <span className="text-2xl font-bold text-red-600" style={{ color: '#e23744' }}>zomato</span>
-              <span className="text-xs bg-red-100 text-red-600 px-2 py-1 rounded-full font-medium" style={{ backgroundColor: '#ffebec', color: '#e23744' }}>
-                local
+              <span className="text-2xl font-bold" style={{ color: '#FF5C00' }}>Foodie</span>
+              <span className="text-xs px-2 py-1 rounded-full font-medium" style={{ backgroundColor: '#fff3ed', color: '#FF5C00' }}>
+                Express
               </span>
             </div>
           </Link>
 
-          {/* Search Bar - Zomato Style */}
+          {/* Search Bar */}
           <div className="hidden lg:flex flex-1 max-w-2xl mx-8">
             <div className="relative w-full">
               <div className="flex items-center bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center px-4 py-3 border-r border-gray-200">
                   <span className="text-lg mr-2">📍</span>
                   <div className="text-sm">
-                    <div className="font-medium text-gray-900">New York</div>
-                    <div className="text-gray-500 text-xs">NY, USA</div>
+                    <div className="font-medium text-gray-900">Madurai</div>
+                    <div className="text-gray-500 text-xs">Tamil Nadu, India</div>
                   </div>
                 </div>
                 <div className="flex-1 px-4">
@@ -53,7 +53,7 @@ const Header = () => {
                     className="w-full text-sm text-gray-700 placeholder-gray-400 border-none outline-none bg-transparent"
                   />
                 </div>
-                <button className="px-4 py-3 text-gray-400 hover:text-red-600 transition-colors">
+                <button className="px-4 py-3 transition-colors" style={{ color: '#FF5C00' }}>
                   <span className="text-lg">🔍</span>
                 </button>
               </div>
@@ -65,11 +65,11 @@ const Header = () => {
             <Link
               to="/meals"
               className={`text-sm font-medium transition-colors duration-200 px-3 py-2 rounded-md ${
-                isActive('/meals') 
-                  ? 'text-red-600 bg-red-50' 
-                  : 'text-gray-700 hover:text-red-600 hover:bg-red-50'
+                isActive('/meals')
+                  ? 'bg-orange-50'
+                  : 'text-gray-700 hover:bg-orange-50'
               }`}
-              style={{ color: isActive('/meals') ? '#e23744' : undefined }}
+              style={{ color: isActive('/meals') ? '#FF5C00' : undefined }}
             >
               🍽️ Order Online
             </Link>
@@ -78,11 +78,11 @@ const Header = () => {
               <Link
                 to="/orders"
                 className={`text-sm font-medium transition-colors duration-200 px-3 py-2 rounded-md ${
-                  isActive('/orders') 
-                    ? 'text-red-600 bg-red-50' 
-                    : 'text-gray-700 hover:text-red-600 hover:bg-red-50'
+                  isActive('/orders')
+                    ? 'bg-orange-50'
+                    : 'text-gray-700 hover:bg-orange-50'
                 }`}
-                style={{ color: isActive('/orders') ? '#e23744' : undefined }}
+                style={{ color: isActive('/orders') ? '#FF5C00' : undefined }}
               >
                 📋 My Orders
               </Link>
@@ -92,11 +92,11 @@ const Header = () => {
               <Link
                 to="/chef-dashboard"
                 className={`text-sm font-medium transition-colors duration-200 px-3 py-2 rounded-md ${
-                  isActive('/chef-dashboard') 
-                    ? 'text-red-600 bg-red-50' 
-                    : 'text-gray-700 hover:text-red-600 hover:bg-red-50'
+                  isActive('/chef-dashboard')
+                    ? 'bg-orange-50'
+                    : 'text-gray-700 hover:bg-orange-50'
                 }`}
-                style={{ color: isActive('/chef-dashboard') ? '#e23744' : undefined }}
+                style={{ color: isActive('/chef-dashboard') ? '#FF5C00' : undefined }}
               >
                 👨‍🍳 Dashboard
               </Link>
@@ -107,10 +107,10 @@ const Header = () => {
           <div className="flex items-center space-x-3">
             {/* Cart */}
             {isAuthenticated && (
-              <Link to="/cart" className="relative p-2 hover:bg-red-50 rounded-lg transition-colors duration-200">
+              <Link to="/cart" className="relative p-2 rounded-lg transition-colors duration-200 hover:bg-orange-50">
                 <span className="text-xl">🛒</span>
                 {cartItemCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center" style={{ backgroundColor: '#e23744' }}>
+                  <span className="absolute -top-1 -right-1 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center" style={{ backgroundColor: '#FF5C00' }}>
                     {cartItemCount}
                   </span>
                 )}
@@ -122,10 +122,10 @@ const Header = () => {
               <div className="relative">
                 <button
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                  className="flex items-center space-x-2 p-2 hover:bg-red-50 rounded-lg transition-colors duration-200"
+                  className="flex items-center space-x-2 p-2 hover:bg-orange-50 rounded-lg transition-colors duration-200"
                 >
-                  <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center" style={{ backgroundColor: '#ffebec' }}>
-                    <span className="text-red-600" style={{ color: '#e23744' }}>👤</span>
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: '#fff3ed' }}>
+                    <span style={{ color: '#FF5C00' }}>👤</span>
                   </div>
                   <span className="hidden sm:block text-sm font-medium text-gray-900">{user?.name}</span>
                   <span className="text-gray-400">▼</span>
@@ -143,8 +143,9 @@ const Header = () => {
                     </div>
                     <Link
                       to="/orders"
-                      className="flex items-center px-4 py-3 text-sm font-medium text-gray-700 hover:bg-red-50 hover:text-red-600"
+                      className="flex items-center px-4 py-3 text-sm font-medium text-gray-700 hover:bg-orange-50"
                       onClick={() => setIsUserMenuOpen(false)}
+                      style={{ color: undefined }}
                     >
                       <span className="mr-3">📋</span>
                       Your orders
@@ -152,7 +153,7 @@ const Header = () => {
                     {user?.role === 'chef' && (
                       <Link
                         to="/chef-dashboard"
-                        className="flex items-center px-4 py-3 text-sm font-medium text-gray-700 hover:bg-red-50 hover:text-red-600"
+                        className="flex items-center px-4 py-3 text-sm font-medium text-gray-700 hover:bg-orange-50"
                         onClick={() => setIsUserMenuOpen(false)}
                       >
                         <span className="mr-3">👨‍🍳</span>
@@ -162,7 +163,7 @@ const Header = () => {
                     {user?.role === 'admin' && (
                       <Link
                         to="/admin"
-                        className="flex items-center px-4 py-3 text-sm font-medium text-gray-700 hover:bg-red-50 hover:text-red-600"
+                        className="flex items-center px-4 py-3 text-sm font-medium text-gray-700 hover:bg-orange-50"
                         onClick={() => setIsUserMenuOpen(false)}
                       >
                         <span className="mr-3">⚙️</span>
@@ -175,7 +176,7 @@ const Header = () => {
                           logout()
                           setIsUserMenuOpen(false)
                         }}
-                        className="w-full flex items-center text-left px-4 py-3 text-sm font-medium text-gray-700 hover:bg-red-50 hover:text-red-600"
+                        className="w-full flex items-center text-left px-4 py-3 text-sm font-medium text-gray-700 hover:bg-orange-50"
                       >
                         <span className="mr-3">🚪</span>
                         Logout
@@ -188,13 +189,14 @@ const Header = () => {
               <div className="flex items-center space-x-2">
                 <Link
                   to="/login"
-                  className="text-sm font-medium text-gray-700 hover:text-red-600 transition-colors duration-200 px-3 py-2 rounded-md hover:bg-red-50"
+                  className="text-sm font-medium text-gray-700 hover:bg-orange-50 transition-colors duration-200 px-3 py-2 rounded-md"
                 >
                   Log in
                 </Link>
                 <Link
                   to="/register"
-                  className="btn btn-primary text-sm font-medium"
+                  className="text-sm font-medium text-white px-4 py-2 rounded-lg transition-colors duration-200"
+                  style={{ backgroundColor: '#FF5C00' }}
                 >
                   Sign up
                 </Link>
@@ -221,7 +223,7 @@ const Header = () => {
             <div className="flex flex-col space-y-4">
               <Link
                 to="/meals"
-                className="text-gray-700 font-medium transition-colors duration-200 hover\\:text-primary-600"
+                className="text-gray-700 font-medium transition-colors duration-200"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Browse Meals
@@ -231,7 +233,7 @@ const Header = () => {
                 <>
                   <Link
                     to="/cart"
-                    className="flex items-center space-x-2 text-gray-700 font-medium transition-colors duration-200 hover\\:text-primary-600"
+                    className="flex items-center space-x-2 text-gray-700 font-medium transition-colors duration-200"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <span className="text-xl">🛒</span>
@@ -240,7 +242,7 @@ const Header = () => {
 
                   <Link
                     to="/orders"
-                    className="text-gray-700 font-medium transition-colors duration-200 hover\\:text-primary-600"
+                    className="text-gray-700 font-medium transition-colors duration-200"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     My Orders
@@ -249,7 +251,7 @@ const Header = () => {
                   {user?.role === 'chef' && (
                     <Link
                       to="/chef-dashboard"
-                      className="flex items-center space-x-2 text-gray-700 font-medium transition-colors duration-200 hover\\:text-primary-600"
+                      className="flex items-center space-x-2 text-gray-700 font-medium"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       <span className="text-lg">👨‍🍳</span>
@@ -260,7 +262,7 @@ const Header = () => {
                   {user?.role === 'admin' && (
                     <Link
                       to="/admin"
-                      className="flex items-center space-x-2 text-gray-700 font-medium transition-colors duration-200 hover\\:text-primary-600"
+                      className="flex items-center space-x-2 text-gray-700 font-medium"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       <span className="text-lg">⚙️</span>
@@ -278,7 +280,8 @@ const Header = () => {
                         logout()
                         setIsMobileMenuOpen(false)
                       }}
-                      className="btn btn-danger w-full"
+                      className="w-full text-white px-4 py-2 rounded-lg font-medium"
+                      style={{ backgroundColor: '#FF5C00' }}
                     >
                       Logout
                     </button>
@@ -288,14 +291,15 @@ const Header = () => {
                 <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
                   <Link
                     to="/login"
-                    className="text-gray-700 font-medium transition-colors duration-200 hover\\:text-primary-600"
+                    className="text-gray-700 font-medium"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Login
                   </Link>
                   <Link
                     to="/register"
-                    className="btn btn-primary w-full"
+                    className="text-white px-4 py-2 rounded-lg font-medium text-center"
+                    style={{ backgroundColor: '#FF5C00' }}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Sign Up
